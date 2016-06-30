@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+<title>Home</title>
+
+</head>
+
+
+<body>
+
+	<div class="site-content">
+		<div class="site-header" style="padding: 30px">
+			<div class="container">
+				<a href="#/home" class="branding"> <img
+					src="app/assets/img/logo.png" alt="" class="logo">
+					<div class="logo-type">
+						<h1 class="site-title">Weather App</h1>
+						<small class="site-description"></small>
+					</div>
+				</a>
+
+				<div align="right" style="margin-bottom: 50px">
+					Hi, {{userName}} <a style="margin-left: 10px" href=""
+						ng-click="logout()">Logout</a>
+				</div>
+
+				<!-- Default snippet for navigation -->
+				<div class="main-navigation">
+					<button type="button" class="menu-toggle">
+						<i class="fa fa-bars"></i>
+					</button>
+					<ul class="menu">
+						<li class="menu-item current-menu-item"><a href="#/home">Home</a></li>
+						<li class="menu-item" ng-show="userRole === 'ADMIN'"><a
+							href="#/cities">Cities</a></li>
+						<li class="menu-item" ng-show="userRole === 'ADMIN'"><a
+							href="#/notes">Notes</a></li>
+						<li class="menu-item" ng-show="userRole === 'ADMIN'"><a
+							href="#/predefinedNotes">Predefined Notes</a></li>
+					</ul>
+					<!-- .menu -->
+				</div>
+
+
+				<!-- .main-navigation -->
+
+				<div class="mobile-navigation"></div>
+
+			</div>
+		</div>
+		<!-- .site-header -->
+
+		<div name="body">
+			<div class="hero"
+				style="background-image: url('app/assets/img/banner.png');">
+				<div class="container"
+					style="margin-left: 100px; margin-right: 100px">
+					<form name="weatherForm" class="find-location">
+						<input ng-model="selectedCity" name="selectedCity" id="selectedCity"
+							type="text" placeholder="Find your location..." value="">
+						<input  ng-click="checkWeather()"
+							style="padding-left: 20px; padding-right: 20px" value="Check Weather" type="submit" />
+					</form>
+
+				</div>
+			</div>
+			<div class="forecast-table">
+				<div class="container">
+					<div class="forecast-container">
+
+						<div class="today forecast" ng-show="viewTemp">
+							<div class="forecast-header">
+								<div class="day">{{day}}</div>
+								<div class="date">{{date}}</div>
+							</div>
+							<!-- .forecast-header -->
+							<div class="forecast-content">
+								<div class="location">{{city}}</div>
+								<div class="degree">
+									<div class="num">
+										{{temp}}<sup>o</sup>C
+									</div>
+									<div class="forecast-icon">
+										<img src="app/assets/img/icons/icon-1.svg" alt="" width=90>
+									</div>
+								</div>
+								<div ng-show="userRole == 'ADMIN'">
+									<button style="width: 100px" class="button" id="add_note"
+										onclick="addNote()" ng-hide="userRole === 'USER' || !isPredefined" >Add note</button>
+
+									<form method="post" class="contact-form" id="add_note_form"
+										style="display: none">
+										<div class="row">
+											<div class="col-md-6">
+												<input type="text" ng-model="note" placeholder="Note..." />
+											</div>
+											<div class="col-md-3" style="margin-top: 5px">
+												<button ng-click="addNote()" onclick="skip()"
+													style="padding-left: 30px; padding-right: 30px">Add</button>
+												<a href="#" style="width: 70px; margin-left: 10px"
+													class="button" id="skio_add_note" onclick="skip()">Skip</a>
+											</div>
+										</div>
+										<div class="text"></div>
+
+									</form>
+								</div>
+								<span style="font-size: 20px" ng-show="userRole != 'ADMIN' || !isPredefined">{{note}}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<footer class="site-footer" style="margin-top: 200px">
+			<div class="container">
+
+				<p class="colophon">Copyright 2015 Weather App. Designed by
+					Mohamed Gaber. All rights reserved</p>
+			</div>
+		</footer>
+		<!-- .site-footer -->
+	</div>
+	
+	
+</body>
+
+</html>

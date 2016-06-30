@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+<title>Notes</title>
+	
+ 
+		
+<style type="text/css">
+	
+.table {
+    width: 100%;
+}
+
+.table th {
+    border-bottom: 3px solid #262936;
+    height: 50px;
+}
+
+.table td {
+    border-bottom: 1px solid #262936;
+}
+
+.table th, td {
+    padding: 15px;
+    text-align: left;
+}
+	
+</style>
+
+</head>
+
+
+<body>
+
+	<div class="site-content">
+		<div class="site-header">
+			<div class="container">
+				<a href="#/home" class="branding"> <img
+					src="app/assets/img/logo.png"
+					alt="" class="logo">
+					<div class="logo-type">
+						<h1 class="site-title">Weather App</h1>
+						<small class="site-description"></small>
+					</div>
+				</a>
+
+				<div align="right" style="margin-bottom: 50px">
+					Hi, {{userName}} <a style="margin-left: 10px" href="" ng-click="logout()">Logout</a>
+				</div>
+
+				<!-- Default snippet for navigation -->
+				<div class="main-navigation">
+					<button type="button" class="menu-toggle">
+						<i class="fa fa-bars"></i>
+					</button>
+					<ul class="menu">
+						<li class="menu-item"><a href="#/home">Home</a></li>
+						<li class="menu-item" ng-show="userRole === 'ADMIN'"><a
+							href="#/cities">Cities</a></li>
+						<li class="menu-item current-menu-item" ng-show="userRole === 'ADMIN'"><a
+							href="#/notes">Notes</a></li>
+						<li class="menu-item" ng-show="userRole === 'ADMIN'"><a
+							href="#/predefinedNotes">Predefined Notes</a></li>
+					</ul>
+					<!-- .menu -->
+				</div>
+
+				<!-- .main-navigation -->
+
+				<div class="mobile-navigation"></div>
+
+
+			</div>
+		</div>
+		<!-- .site-header -->
+
+		<main class="main-content">
+		<div class="container">
+			<div class="breadcrumb">
+				<a href="#/home">Home</a> <span>Notes</span>
+			</div>
+		</div>
+
+		<div class="fullwidth-block" style="padding-top: 20px">
+			<div class="container">
+
+				<div style="overflow: auto; height: 300px; padding: 10px">
+
+					<table class="table" >
+						<tr>
+							<th>#</th>
+							<th>City</th>
+							<th>Date</th>
+							<th>Note</th>
+						<tr>
+						
+						<tr ng-repeat="note in notes">
+							<td>{{$index+1}}</td>
+							<td>{{note.cityDto.cityName}}</td>
+							<td>{{note.noteDate}}</td>
+							<td>{{note.noteText}}</td>
+						</tr>
+						
+					</table>
+					
+				</div>
+
+			</div>
+		</div>
+
+		</main>
+		<!-- .main-content -->
+
+		<footer class="site-footer">
+		<div class="container">
+
+			<p class="colophon">Copyright 2015 Weather App. Designed by
+				Mohamed Gaber. All rights reserved</p>
+		</div>
+		</footer>
+		<!-- .site-footer -->
+	</div>
+
+
+</body>
+
+</html>

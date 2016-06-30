@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+<title>Login</title>
+
+</head>
+
+
+<body>
+
+	<div class="site-content">
+		<div class="site-header">
+			<div class="container">
+				<a href="#/login" class="branding"> <img
+					src="app/assets/img/logo.png" alt="" class="logo">
+					<div class="logo-type">
+						<h1 class="site-title">Weather App</h1>
+						<small class="site-description"></small>
+					</div>
+				</a>
+
+
+			</div>
+		</div>
+		<!-- .site-header -->
+
+		<main class="main-content">
+		<div class="container">
+			<div ng-show="showSuccessMessage" class="breadcrumb">{{successMessage}}</div>
+		</div>
+
+		<div class="fullwidth-block">
+			<div class="container">
+
+				<div class="col-md-7 col-md-offset-4">
+					<h2 class="section-title">Login</h2>
+
+					<form name="loginForm" method="post" class="contact-form">
+						<div class="row">
+							<div class="col-md-6">
+								<input type="email" name="email" placeholder="Email Addresss..."
+									ng-model="email" required />
+							</div>
+							
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<input name="password" type="password" placeholder="Password..."
+									ng-model="password" required />
+							</div>
+							
+						</div>
+						
+						<div class="text">
+							<button placeholder="Login"
+								style="padding-left: 50px; padding-right: 50px" ng-click="login()">Login</button>
+							<label style="padding: 10px; margin-left: 20px">
+								{{errorMessage}}</label>
+						</div>
+					</form>
+
+					<br /> <a style="margin-left: 10px" href="#/register">Create
+						account</a>
+
+				</div>
+			</div>
+		</div>
+
+		</main>
+		<!-- .main-content -->
+
+		<footer class="site-footer">
+		<div class="container">
+
+			<p class="colophon">Copyright 2015 Weather App. Designed by
+				Mohamed Gaber. All rights reserved</p>
+		</div>
+		</footer>
+		<!-- .site-footer -->
+	</div>
+
+</body>
+
+</html>

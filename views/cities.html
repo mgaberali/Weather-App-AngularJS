@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+<title>Cities</title>
+
+</head>
+
+<body>
+
+	<div class="site-content">
+		<div class="site-header">
+			<div class="container">
+				<a href="#/home" class="branding"> <img
+					src="app/assets/img/logo.png" alt="" class="logo">
+					<div class="logo-type">
+						<h1 class="site-title">Weather App</h1>
+						<small class="site-description"></small>
+					</div>
+				</a>
+
+				<div align="right" style="margin-bottom: 50px">
+					Hi, {{userName}} <a style="margin-left: 10px" href="" ng-click="logout()">Logout</a>
+				</div>
+
+				<!-- Default snippet for navigation -->
+				<div class="main-navigation">
+					<button type="button" class="menu-toggle">
+						<i class="fa fa-bars"></i>
+					</button>
+					<ul class="menu">
+						<li class="menu-item"><a href="#/home">Home</a></li>
+						<li class="menu-item current-menu-item" ng-show="userRole === 'ADMIN'"><a
+							href="#/cities">Cities</a></li>
+						<li class="menu-item" ng-show="userRole === 'ADMIN'"><a
+							href="#/notes">Notes</a></li>
+						<li class="menu-item" ng-show="userRole === 'ADMIN'"><a
+							href="#/predefinedNotes">Predefined Notes</a></li>
+					</ul>
+					<!-- .menu -->
+				</div>
+
+
+				<!-- .main-navigation -->
+
+				<div class="mobile-navigation"></div>
+
+
+			</div>
+		</div>
+		<!-- .site-header -->
+
+		<main class="main-content">
+		<div class="container">
+			<div class="breadcrumb">
+				<a href="#/home">Home</a> <span>Cities</span>
+			</div>
+		</div>
+
+		<div class="container post">
+
+			<form class="subscribe-form contact-form">
+
+				<div class="row">
+					<div class="col-md-5">
+						<input ng-model="cityName" type="text" placeholder="Enter city name..." />
+					</div>
+
+					<div class="col-md-4" style="margin-top: 5px; margin-left: 10px">
+						<button ng-click="addCity()" >Add city</button> <span
+							style="margin-left: 10px"> {{errorMessage}} </span>
+					</div>
+
+				</div>
+
+			</form>
+
+		</div>
+
+		<div class="fullwidth-block" style="padding-top: 20px">
+			<div class="container">
+
+				<div class="filter"
+					style="overflow: auto; height: 300px; padding: 10px">
+
+					<div ng-repeat="city in cities" class="count filter-control"
+						style="margin-bottom: 10px; margin-right: 10px; width: 200px">
+						
+						<label for="">{{city.cityName}}</label>
+						
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		</main>
+		<!-- .main-content -->
+
+		<footer class="site-footer">
+		<div class="container">
+
+			<p class="colophon">Copyright 2015 Weather App. Designed by
+				Mohamed Gaber. All rights reserved</p>
+		</div>
+		</footer>
+		<!-- .site-footer -->
+	</div>
+
+</body>
+
+</html>

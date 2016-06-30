@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+<title>Sign Up</title>
+
+</head>
+
+
+<body>
+
+	<div class="site-content">
+		<div class="site-header">
+			<div class="container">
+				<a href="#/register" class="branding"> <img
+					src="app/assets/img/logo.png" alt="" class="logo">
+					<div class="logo-type">
+						<h1 class="site-title">Weather App</h1>
+						<small class="site-description"></small>
+					</div>
+				</a>
+
+
+			</div>
+		</div>
+		<!-- .site-header -->
+
+		<main class="main-content">
+		<div class="container"></div>
+
+		<div class="fullwidth-block">
+			<div class="container">
+
+				<div class="col-md-7 col-md-offset-4">
+					<h2 class="section-title">Sign Up</h2>
+
+					<form name="signupForm" method="post" class="contact-form">
+
+						<div class="row">
+							<div class="col-md-6">
+								<input ng-model="name" type="text" placeholder="Name..." required />
+							</div>
+							<div class="col-md-5" style="padding: 10px"></div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<input ng-model="email" type="email"
+									placeholder="Email Addresss..." required />
+							</div>
+							<div class="col-md-5" style="padding: 10px"></div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<input ng-model="mobile" type="number" placeholder="Mobile..." required/>
+							</div>
+							<div class="col-md-5" style="padding: 10px"></div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<input ng-model="password" type="password"
+									placeholder="Password..." required/>
+							</div>
+							<div class="col-md-5" style="padding: 10px"></div>
+						</div>
+
+						<div class="text">
+							<button ng-click="signup()"
+								style="padding-left: 50px; padding-right: 50px">SignUp</button>
+							<label style="padding: 10px; margin-left: 20px">{{errorMessage}}</label>
+						</div>
+
+					</form>
+
+
+				</div>
+			</div>
+		</div>
+
+		</main>
+		<!-- .main-content -->
+
+		<footer class="site-footer">
+			<div class="container">
+
+				<p class="colophon">Copyright 2015 Weather App. Designed by
+					Mohamed Gaber. All rights reserved</p>
+			</div>
+		</footer>
+		<!-- .site-footer -->
+	</div>
+
+</body>
+
+</html>

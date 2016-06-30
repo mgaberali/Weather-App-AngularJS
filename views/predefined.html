@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+<title>Predefined Notes</title>
+
+
+</head>
+
+
+<body>
+
+	<div class="site-content">
+		<div class="site-header">
+			<div class="container">
+				<a href="#/home" class="branding"> <img
+					src="app/assets/img/logo.png"
+					alt="" class="logo">
+					<div class="logo-type">
+						<h1 class="site-title">Weather App</h1>
+						<small class="site-description"></small>
+					</div>
+				</a>
+				
+				<div align="right" style="margin-bottom: 50px">
+					Hi, {{userName}} <a style="margin-left: 10px" href="" ng-click="logout()">Logout</a>
+				</div>
+				
+				<!-- Default snippet for navigation -->
+				<div class="main-navigation">
+					<button type="button" class="menu-toggle">
+						<i class="fa fa-bars"></i>
+					</button>
+					<ul class="menu">
+						<li class="menu-item"><a href="#/home">Home</a></li>
+						<li class="menu-item" ng-show="userRole === 'ADMIN'"><a
+							href="#/cities">Cities</a></li>
+						<li class="menu-item" ng-show="userRole === 'ADMIN'"><a
+							href="#/notes">Notes</a></li>
+						<li class="menu-item current-menu-item" ng-show="userRole === 'ADMIN'"><a
+							href="#/predefinedNotes">Predefined Notes</a></li>
+					</ul>
+					<!-- .menu -->
+				</div>
+
+
+				<!-- .main-navigation -->
+
+				<div class="mobile-navigation"></div>
+				
+
+			</div>
+		</div>
+		<!-- .site-header -->
+
+		<main class="main-content">
+		<div class="container">
+			<div class="breadcrumb">
+				<a href="#/home">Home</a> <span>Predefined Notes</span>
+			</div>
+		</div>
+
+		<div class="fullwidth-block">
+			<div class="container">
+
+				<div class="col-md-7 col-md-offset-3">
+					<h2 class="section-title">Predefined Notes</h2>
+
+					<form method="post" class="contact-form">
+						<div class="row">
+							
+							<div class="col-md-3" style="padding: 15px">
+								<label>Temp from 1 to 10</label>
+								
+							</div>
+							<div class="col-md-6">
+								<input type="text" name="from1To10" ng-model="predefinedNotes.from1To10" />
+							</div>
+							
+						</div>
+						
+						<div class="row">
+							
+							<div class="col-md-3" style="padding: 15px">
+								<label>Temp from 10 to 15</label>
+								
+							</div>
+							<div class="col-md-6">
+								<input type="text" name="from10To15" ng-model="predefinedNotes.from10To15" />
+							</div>
+							
+						</div>
+						
+						<div class="row">
+							
+							<div class="col-md-3" style="padding: 15px">
+								<label>Temp from 15 to 20</label>
+								
+							</div>
+							<div class="col-md-6">
+								<input type="text" name="from15To20" ng-model="predefinedNotes.from15To20" />
+							</div>
+							
+						</div>
+						
+						<div class="row">
+							
+							<div class="col-md-3" style="padding: 15px">
+								<label>Temp above 20</label>
+								
+							</div>
+							<div class="col-md-6">
+								<input type="text" name="above20" ng-model="predefinedNotes.above20" />
+							</div>
+							
+						</div>
+						
+
+						<div class="text-right" style="margin-right: 160px; margin-top: 20px">
+							<button placeholder="Set"
+								style="padding-left: 50px; padding-right: 50px" ng-click="setPreNotes()">Set</button>
+						</div>
+
+					</form>
+
+					
+				</div>
+			</div>
+		</div>
+
+		</main>
+		<!-- .main-content -->
+
+		<footer class="site-footer">
+		<div class="container">
+
+			<p class="colophon">Copyright 2015 Weather App. Designed by
+				Mohamed Gaber. All rights reserved</p>
+		</div>
+		</footer>
+		<!-- .site-footer -->
+	</div>
+
+
+</body>
+
+</html>
